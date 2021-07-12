@@ -1,0 +1,182 @@
+% !TeX root = main.tex
+
+%%%%%%%%%%%%%%
+%% PACKAGES %%
+%%%%%%%%%%%%%%
+
+
+    % DOCUMENT CUSTOMIZATION5
+
+    \usepackage{setspace}
+    \usepackage{bm}                     % bm        - Superior bold fonts in math mode.
+    \usepackage{enumitem}               % enumitem  - Customization of enumerate and itemize
+                                        % environments.
+   % \usepackage{hyperref}               % hyperref
+%    \usepackage{tocloft}                % tocloft - allows creation of new tables, e.g. list of definitions, list of theorems
+                                        % etc. 
+                                        % Usage example:
+                                        %       \newcommand{\listanswername}{List of Answers}
+                                        %       \newlistof[chapter]{answer}{ans}{\listanswername}
+                                        %       \newcommand{\answer}[1]{%
+                                        %       \refstepcounter{answer}
+                                        %       \par\noindent\textbf{Answer \theanswer. #1}
+                                        %       \addcontentsline{ans}{answer}{\protect\numberline{\theanswer}#1}\par}
+
+    % SYMBOLS, ENVIRONMENTS, ETC
+
+    \usepackage[colorinlistoftodos,backgroundcolor=green,linecolor=green!50]{todonotes} % Add ``disable in options to disable''
+                      
+
+
+    \usepackage{mathtools}              % mathtools - Exactly what it sounds like, e.g. \xrightarrow.
+    \usepackage{subfig}
+
+    
+% SYMBOLS, ENVIRONMENTS, ETC.
+    \usepackage{graphicx}
+    \usepackage{ifthen, xkeyval, xcolor, calc}
+    \usepackage{amsmath,amsthm,amssymb} % ams***    - Tons of useful symbols and commands I take for granted.  
+    \usepackage{MnSymbol}
+    \usepackage{tikz-cd}
+    \usepackage{tikz}
+        \usetikzlibrary{knots,positioning,decorations.pathreplacing,decorations.pathmorphing,matrix}
+
+% FONTS
+    \usepackage{dsfont}                 % dsfont    - I only use this for identity map. Like mathbb with numbers.                                          
+    \usepackage{thmtools}
+    \usepackage{thm-restate}
+    \usepackage%[backend=biber]
+        {biblatex}
+        %\addbibresource{library.bib}
+        \bibliography{library}
+    \usepackage{nicematrix}
+        
+    
+
+%%%%%%%%%%%%%% 
+%% COMMANDS %%
+%%%%%%%%%%%%%%      
+        %\newcommand{\dfn}[1]{\emph{#1}}
+
+        \newcommand{\N}{\mathbb{N}}                 % \N        - Natural Numbers in math mode
+        \newcommand{\Z}{\mathbb{Z}}                 % \Z        - The integers in math mode
+        \newcommand{\R}{\mathbb{R}}                 % \R        - The Real numbers in math mode
+        \newcommand{\Q}{\mathbb{Q}}                 % \Q        - The rational numbers in math mode
+        \newcommand{\C}{\mathbb{C}}                 % \C        - The complex numbers in math mode
+        
+        \newcommand{\dx}{\;dx}
+        \newcommand{\dy}{\;dy}
+        \newcommand{\dz}{\;dz}
+
+        \DeclareMathOperator{\sr}{sr}
+        
+        %\newcommand{\a}{\alpha}
+        %\newcommand{\b}{\beta}
+        
+        \newcommand{\gen}[1]{%                      % \gen{}    - Use for generating sets, gives 
+                                                    % <stuff>
+            \left\langle #1 \right\rangle} 
+            \newcommand{\set}[1]{\left\{ #1 \right\}}
+            \newcommand{\rk}{\mathrm{rank}~}
+        
+        
+    % MAPS
+        \newcommand{\I}{\mathds{1}}                 % \I        - Produces a symbol for the identity map. 
+        
+    % BRAIDS AND LINKS
+            
+        %\newcommand{\lk}{\mathrm{lk}}               % \lk       - linking number
+        \newcommand{\hc}{\mathcal{H}}               % \hc       - Mathcal H
+        \newcommand{\cc}{\mathcal{C}}               % \cc       - Configuration spaces 
+        \newcommand{\ccc}{\widetilde{\cc}}           % \ccc      -covering space of \cc
+        \newcommand{\fc}{\mathcal{F}}
+        \newcommand{\s}{\sigma_}
+        \newcommand{\si}{\sigma^{-1}_}
+        \newcommand{\g}{\gamma}
+        \newcommand{\bi}{\bm{1}_}
+    
+
+        \newcommand{\bur}[1][\beta]{\mathrm{bur}_{#1}}
+        \newcommand{\bir}[1][\beta]{h_{#1}(x)}
+    % MAPPING CLASS GROUPS 
+    
+        \newcommand{\m}{\mathrm{Mod}}               % \m        - Mod
+        \newcommand{\pa}{pseudo-Anosov }
+        \newcommand{\dil}[1][\beta]{\lambda_{#1}}
+        \newcommand{\mc}{\mathcal{M}}
+        
+    % Unique to this paper
+        \newcommand{\bb}{Band-Boyland~}
+        \newcommand{\wh}{\widehat}
+        \newcommand{\lk}{\mathrm{Lk}}
+        \newcommand{\bmm}{\bm{M}}
+        \newcommand{\gm}{G_}
+        \newcommand{\mcg}{\mathrm{MCG}}
+
+
+        \newcommand{\wg}{W(G,g)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CUSTOMIZED ENVIRONMENTS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    % THEOREM, PROPOSITION, LEMMA, AND COROLLARY
+    \theoremstyle{plain}
+        \newtheorem{thm}{Theorem}[section]
+        \newtheorem{prop}[thm]{Proposition}
+        \newtheorem{lem}[thm]{Lemma}
+        \newtheorem{cor}[thm]{Corollary}
+        \newtheorem{conj}[thm]{Conjecture}
+
+    % DEFINITIONS
+        \theoremstyle{definition}
+        \newtheorem{dfn}[thm]{{Definition}}
+    
+    % EXAMPLES
+        \theoremstyle{definition}
+        \newtheorem{example}[thm]{Example}
+        \newtheorem{rmk}{Remark}
+          
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% GLOBAL DOCUMENT OPTIONS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % SPACING
+
+        % \onehalfspacing                   % Uncomment to set 1.5 spacing
+        % \doublespacing                    % Uncomment to set double spacing
+        % \setlength\parindent{0pt}
+        % \parskip = 1em                    % Uncomment to set the space between paragraphs.
+
+        %\setlist[enumerate,1]{label=(\alph*)}
+        
+    % CHAPTER, SECTION, SUBSECTION HEADINGS AND TABLE OF CONTENTS
+        %\setcounter{secnumdepth}{1}        % only chapter and sections will be numbered
+        %\setcounter{tocdepth}{2}           % entries down to \subsubsections in the TOC
+        
+    % AUTOREF OPTIONS
+        
+        %\def\sectionautorefname{section}
+        %\def\subsectionautorefname{section}
+        %\def\lemautorefname{lemma}
+        %\def\thmautorefname{theorem}
+        %\def\rmkautorefname{remark}
+        %\def\propautorefname{proposition}
+        %\def\corautorefname{corollary}
+
+    % Cleveref options
+    \usepackage{cleveref}
+        \crefname{cor}{corollary}{corrolaries}
+        \crefname{thm}{theorem}{theorems}
+        \crefname{section}{section}{sections}
+        \crefname{subsection}{section}{subsections}
+        \crefname{prop}{proposition}{propositions}
+        \crefname{lem}{lemma}{lemmas}
+        \crefname{figure}{figure}{figures}
+        \crefname{dfn}{definition}{definitions}
+        \crefname{conj}{conjecture}{conjectures}
+        \crefname{rmk}{remark}{remarks}
+        \crefname{example}{example}{examples}
+
+            
